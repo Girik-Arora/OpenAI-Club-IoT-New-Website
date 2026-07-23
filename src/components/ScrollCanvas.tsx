@@ -17,6 +17,9 @@ export const ScrollCanvas: React.FC = () => {
     let loadedCount = 0;
     const loadedImages: HTMLImageElement[] = [];
 
+    // Immediately show UI so Netlify never hangs on white screen
+    setLoaded(true);
+
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
       const filename = (i + 1).toString().padStart(4, '0') + '.jpg';
@@ -26,13 +29,13 @@ export const ScrollCanvas: React.FC = () => {
         setProgress(Math.round((loadedCount / FRAME_COUNT) * 100));
         if (loadedCount === FRAME_COUNT) {
           stateRef.current.images = loadedImages;
-          setLoaded(true);
         }
       };
       img.onload = handleLoad;
       img.onerror = handleLoad;
       loadedImages.push(img);
     }
+    stateRef.current.images = loadedImages;
   }, []);
 
   useEffect(() => {
