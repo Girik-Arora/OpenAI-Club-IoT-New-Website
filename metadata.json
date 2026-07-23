@@ -1,0 +1,6 @@
+{
+  "name": "OpenAI Club IoT",
+  "description": "Landing banner for OpenAI Club of IoT, a student-led innovation hub focused on artificial intelligence, embedded systems and real-world engineering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
