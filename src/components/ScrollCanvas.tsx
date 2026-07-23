@@ -21,7 +21,7 @@ export const ScrollCanvas: React.FC = () => {
       const img = new Image();
       const filename = (i + 1).toString().padStart(4, '0') + '.jpg';
       img.src = `/images/${filename}`;
-      img.onload = () => {
+      const handleLoad = () => {
         loadedCount++;
         setProgress(Math.round((loadedCount / FRAME_COUNT) * 100));
         if (loadedCount === FRAME_COUNT) {
@@ -29,6 +29,8 @@ export const ScrollCanvas: React.FC = () => {
           setLoaded(true);
         }
       };
+      img.onload = handleLoad;
+      img.onerror = handleLoad;
       loadedImages.push(img);
     }
   }, []);
