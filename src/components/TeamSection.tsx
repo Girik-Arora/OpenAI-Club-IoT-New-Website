@@ -172,9 +172,9 @@ export const TeamSection: React.FC = () => {
                 className="group relative rounded-3xl border border-white/20 bg-neutral-950/90 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/60 hover:shadow-[0_20px_40px_rgba(249,115,22,0.25)]"
               >
                 {/* TOP PORTRAIT PHOTO VIEWPORT WITH CLEAN FRAMING */}
-                <div className="w-full h-80 sm:h-96 relative overflow-hidden bg-gradient-to-b from-neutral-900 via-neutral-950 to-black border-b border-white/10 flex items-center justify-center p-4">
+                <div className="w-full h-80 sm:h-96 relative overflow-hidden bg-gradient-to-br from-white/10 via-orange-500/10 to-blue-600/10 backdrop-blur-2xl border-b border-white/15 flex items-center justify-center p-4">
                   {/* Glowing background halo */}
-                  <div className="absolute inset-0 bg-radial from-orange-500/10 via-transparent to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-radial from-orange-400/20 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
                   <img
                     src={faculty.avatar}
@@ -268,16 +268,20 @@ export const TeamSection: React.FC = () => {
                   activeYear === '2026' ? 'hover:border-orange-500/60 hover:shadow-orange-500/10' : 'hover:border-amber-500/60 hover:shadow-amber-500/10'
                 } rounded-3xl overflow-hidden flex flex-col justify-between backdrop-blur-xl shadow-2xl transition-all duration-300 cursor-pointer`}
               >
-                <div className="relative w-full h-72 sm:h-80 overflow-hidden border-b border-white/10 bg-neutral-950 flex items-center justify-center">
+                {/* GLASSMORPHISM PORTRAIT PHOTO VIEWPORT */}
+                <div className="relative w-full h-80 sm:h-96 overflow-hidden border-b border-white/15 bg-gradient-to-br from-white/10 via-orange-500/10 to-blue-600/10 backdrop-blur-2xl flex items-center justify-center p-4">
+                  {/* Subtle glowing ambient aura */}
+                  <div className="absolute inset-0 bg-radial from-orange-400/20 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
                   <img
                     src={student.avatar}
                     alt={student.name}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-contain filter brightness-105 group-hover:scale-105 transition-transform duration-700 ease-out z-10 drop-shadow-2xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 pointer-events-none" />
-                  <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full flex items-center space-x-1.5 z-10">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none z-10" />
+                  <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/25 px-3 py-1 rounded-full flex items-center space-x-1.5 z-20 shadow-lg">
                     <div className={`w-2 h-2 rounded-full ${activeYear === '2026' ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'}`} />
-                    <span className="text-[10px] font-mono text-white/80">{activeYear} Core</span>
+                    <span className="text-[10px] font-mono text-white/90">{activeYear} Core</span>
                   </div>
                 </div>
 
