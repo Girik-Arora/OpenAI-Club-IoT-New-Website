@@ -38,36 +38,36 @@ const facultyMembers: FacultyMember[] = [
 
 const studentTeam2026: StudentMember[] = [
   {
-    name: 'Girik Arora',
+    name: 'Mr. Girik Arora',
     role: 'Chairperson',
     number: '#01',
     badge: 'Executive Leader',
     bio: 'Leading strategic vision, IoT hardware initiatives, and AI community outreach for OpenAI Club IoT.',
     linkedin: 'https://linkedin.com/in/girik-arora',
     github: 'https://github.com/girikarora',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/download_fwqfh2',
     skills: ['IoT Architecture', 'AI Integration', 'Strategy'],
   },
   {
-    name: 'Aayush Randive',
+    name: 'Mr. Aayush Randive',
     role: 'Vice Chairperson',
     number: '#02',
     badge: 'Core Operations',
     bio: 'Directing technical projects, event execution, and cross-departmental development workflows.',
     linkedin: 'https://linkedin.com/in/aayush-randive',
     github: 'https://github.com/aayushrandive',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/download_1_kqpqj5',
     skills: ['Embedded Systems', 'Project Lead', 'Hardware'],
   },
   {
-    name: 'Samannoy Bera',
+    name: 'Mr. Samannoy Bera',
     role: 'Secretary',
     number: '#03',
     badge: 'Operations & Relations',
     bio: 'Managing club communications, technical documentation, member engagement, and institutional alignment.',
     linkedin: 'https://linkedin.com/in/samannoy-bera',
     github: 'https://github.com/samannoybera',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/download_2_jmjpcu',
     skills: ['Documentation', 'Communications', 'Full-Stack'],
   },
 ];
@@ -268,14 +268,14 @@ export const TeamSection: React.FC = () => {
                   activeYear === '2026' ? 'hover:border-orange-500/60 hover:shadow-orange-500/10' : 'hover:border-amber-500/60 hover:shadow-amber-500/10'
                 } rounded-3xl overflow-hidden flex flex-col justify-between backdrop-blur-xl shadow-2xl transition-all duration-300 cursor-pointer`}
               >
-                <div className="relative h-56 sm:h-64 w-full overflow-hidden border-b border-white/10 bg-black">
+                <div className="relative w-full h-72 sm:h-80 overflow-hidden border-b border-white/10 bg-neutral-950 flex items-center justify-center">
                   <img
                     src={student.avatar}
                     alt={student.name}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20" />
-                  <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full flex items-center space-x-1.5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 pointer-events-none" />
+                  <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full flex items-center space-x-1.5 z-10">
                     <div className={`w-2 h-2 rounded-full ${activeYear === '2026' ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'}`} />
                     <span className="text-[10px] font-mono text-white/80">{activeYear} Core</span>
                   </div>
