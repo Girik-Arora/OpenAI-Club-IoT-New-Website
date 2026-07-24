@@ -56,13 +56,13 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Photo Display Viewport */}
-          <div className="relative w-full overflow-hidden rounded-2xl border border-white/15 bg-black/90 shadow-xl group-hover:border-white/30 transition-all duration-500">
+          <div className="relative w-full overflow-hidden rounded-2xl border border-white/20 bg-neutral-950 shadow-2xl group-hover:border-white/40 transition-all duration-500">
             <img
-              src="https://res.cloudinary.com/ilmaxkyq/image/upload/v1784908329/download_6_cuxh3y.png"
+              src="https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto:best,e_sharpen:100,e_improve/v1784908329/download_6_cuxh3y.png"
               alt="OpenAI Club IoT Team & Faculty"
-              className="w-full h-auto object-contain filter brightness-105 group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+              className="w-full h-auto object-contain filter contrast-[1.05] brightness-105 saturate-[1.05] transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+              loading="eager"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Footer Caption */}
