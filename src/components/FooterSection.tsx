@@ -105,8 +105,8 @@ export const FooterSection: React.FC = () => {
                 </div>
                 <div className="flex items-center space-x-2.5">
                   <Mail className="w-4 h-4 text-orange-400 flex-none" />
-                  <a href="mailto:openaiclubiot@tcetmumbai.in" className="hover:text-white transition-colors">
-                    openaiclubiot@tcetmumbai.in
+                  <a href="mailto:iei@tcetmumbai.in" className="hover:text-white transition-colors">
+                    iei@tcetmumbai.in
                   </a>
                 </div>
                 <div className="flex items-center space-x-2.5">
