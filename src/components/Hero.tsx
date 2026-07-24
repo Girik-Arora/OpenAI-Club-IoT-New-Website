@@ -58,9 +58,9 @@ export const Hero: React.FC = () => {
           {/* Photo Display Viewport */}
           <div className="relative w-full overflow-hidden rounded-2xl border border-white/20 bg-neutral-950 shadow-2xl group-hover:border-white/40 transition-all duration-500">
             <img
-              src="https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto:best,e_sharpen:100,e_improve/v1784908329/download_6_cuxh3y.png"
+              src="https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto:best/v1784908676/IMG_5801_uj8qt7.jpg"
               alt="OpenAI Club IoT Team & Faculty"
-              className="w-full h-auto object-contain filter contrast-[1.05] brightness-105 saturate-[1.05] transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+              className="w-full h-auto object-contain filter contrast-[1.03] brightness-105 transition-transform duration-700 ease-out group-hover:scale-[1.01]"
               loading="eager"
             />
           </div>
