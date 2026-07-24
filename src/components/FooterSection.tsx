@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Mail, Phone, Instagram, Github, Linkedin } from 'lucide-react';
+import { MapPin, Mail, Phone, Instagram, Globe, Linkedin } from 'lucide-react';
 import { NavItem } from '../types';
 
 export const FooterSection: React.FC = () => {
@@ -121,11 +121,11 @@ export const FooterSection: React.FC = () => {
             {/* Column 4: Follow Us */}
             <div className="flex flex-col space-y-4 text-left">
               <h4 className="text-sm font-bold uppercase tracking-wider text-white font-sans">
-                Follow Us
+                Follow & Connect
               </h4>
               <div className="flex items-center space-x-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/tcet_iei?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 border border-white/20 flex items-center justify-center text-white transition-all duration-300 shadow-md group"
@@ -135,23 +135,24 @@ export const FooterSection: React.FC = () => {
                 </a>
 
                 <a
-                  href="https://github.com/girikarora"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-neutral-800 border border-white/20 flex items-center justify-center text-white transition-all duration-300 shadow-md group"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                </a>
-
-                <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/iei-tcet/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#0A66C2] border border-white/20 flex items-center justify-center text-white transition-all duration-300 shadow-md group"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                </a>
+
+                <a
+                  href="https://www.iei.tcetmumbai.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-orange-500 border border-white/20 flex items-center justify-center text-white transition-all duration-300 shadow-md group"
+                  aria-label="IEI TCET Website"
+                  title="IEI TCET Official Website"
+                >
+                  <Globe className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </a>
               </div>
             </div>
