@@ -34,15 +34,6 @@ const facultyMembers: FacultyMember[] = [
     bio: 'Pioneering academic guidance, driving research in embedded intelligence, smart sensor ecosystems, and institutional innovation.',
     avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/image_2026-07-24_164019598_nlqxfa',
   },
-  {
-    name: 'Mr. Sunil Khatri',
-    role: 'Faculty Incharge of IEI TCET',
-    subtitle: 'Faculty Mentor - OpenAI Club IoT',
-    designation: '',
-    department: 'The Institution of Engineers (India) - TCET',
-    bio: 'Empowering engineering excellence, student chapter management, technical ethics, and interdisciplinary collaboration.',
-    avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/image_2026-07-24_164218775_vl967s',
-  },
 ];
 
 const studentTeam2026: StudentMember[] = [
@@ -170,7 +161,7 @@ export const TeamSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-4">
+          <div className="max-w-2xl mx-auto pt-4">
             {facultyMembers.map((faculty, idx) => (
               <motion.div
                 key={faculty.name}
