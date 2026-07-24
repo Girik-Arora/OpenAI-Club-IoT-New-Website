@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Send, CheckCircle2, Cpu } from 'lucide-react';
-import { OpenAIClubLogo } from './PlatformLogos';
+import { OpenAIClubIotLogo } from './OpenAIClubIotLogo';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -16,11 +16,56 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Save message to localStorage so it is stored persistently
+    try {
+      const existing = JSON.parse(localStorage.getItem('openai_club_inquiries') || '[]');
+      const newInquiry = {
+        id: Date.now(),
+        date: new Date().toISOString(),
+        ...formData
+      };
+      localStorage.setItem('openai_club_inquiries', JSON.stringify([newInquiry, ...existing]));
+    } catch (err) {
+      console.error('Failed to save message to localStorage:', err);
+    }
+
+    // Submit to Web3Forms API
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'e90c84e0-9eb6-428b-a7c9-13ca451f3ddd';
+    if (accessKey) {
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New Project Inquiry from ${formData.name} (${formData.projectType})`,
+            from_name: 'OpenAI Club IoT Website',
+            to_email: 'iei@tcetmumbai.in',
+            ...formData,
+          }),
+        });
+      } catch (err) {
+        console.error('Web3Forms submit error:', err);
+      }
+    }
+
+    setIsSubmitting(false);
     setSubmitted(true);
+    setFormData({
+      name: '',
+      email: '',
+      projectType: 'AI & IoT Integration',
+      message: '',
+    });
+
     setTimeout(() => {
       setSubmitted(false);
       onClose();
@@ -38,7 +83,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
         </button>
 
         <div className="flex items-center space-x-2.5 mb-2">
-          <OpenAIClubLogo className="w-8 h-5 text-white" />
+          <OpenAIClubIotLogo className="w-8 h-8 sm:w-9 sm:h-9" />
           <span className="text-xs font-semibold text-white/80 uppercase tracking-widest">
             Open AI Club IoT
           </span>
