@@ -81,7 +81,7 @@ const studentTeam2025: StudentMember[] = [
     bio: 'Pioneered early IoT projects, foundational club architecture, and student research mentorship.',
     linkedin: 'https://linkedin.com/in/girik-arora',
     github: 'https://github.com/girikarora',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/v1784907116/download_fwqfh2.png',
     skills: ['IoT Architecture', 'AI Integration', 'Leadership'],
   },
   {
@@ -92,7 +92,7 @@ const studentTeam2025: StudentMember[] = [
     bio: 'Coordinated initial technical initiatives, hardware workshops, and operational workflows.',
     linkedin: 'https://linkedin.com/in/parth-desai',
     github: 'https://github.com/parthdesai',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/v1784907831/download_4_uekfaj.png',
     skills: ['Operations', 'Embedded Systems', 'Technical Execution'],
   },
   {
@@ -103,7 +103,7 @@ const studentTeam2025: StudentMember[] = [
     bio: 'Managed club administration, documentation, event relations, and community outreach.',
     linkedin: 'https://linkedin.com/in/shreya-shrivastav',
     github: 'https://github.com/shreyashrivastav',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/v1784907832/download_5_nl9tyo.png',
     skills: ['Administration', 'Documentation', 'Public Relations'],
   },
   {
@@ -114,7 +114,7 @@ const studentTeam2025: StudentMember[] = [
     bio: 'Providing strategic guidance, technical domain advisory, and student mentorship for foundational initiatives.',
     linkedin: 'https://linkedin.com/in/krishna-bitthariya',
     github: 'https://github.com/krishnabitthariya',
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80',
+    avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/v1784907832/download_3_dr80ev.png',
     skills: ['Strategic Advisory', 'Mentorship', 'IoT Systems'],
   },
 ];
