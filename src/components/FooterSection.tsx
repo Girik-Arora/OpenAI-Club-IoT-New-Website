@@ -1,14 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MapPin, Mail, Phone, Instagram, Github, Linkedin } from 'lucide-react';
 import { NavItem } from '../types';
 
-interface FooterSectionProps {
-  onNavClick: (nav: NavItem) => void;
-}
+export const FooterSection: React.FC = () => {
+  const navigate = useNavigate();
 
-export const FooterSection: React.FC<FooterSectionProps> = ({ onNavClick }) => {
   return (
-    <footer id="contact" className="w-full bg-transparent text-white pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-white/15 relative z-20 font-sans">
+    <footer id="contact" className="w-full bg-transparent text-white mt-16 sm:mt-24 pt-20 pb-16 px-4 sm:px-6 lg:px-8 border-t border-white/15 relative z-20 font-sans">
       <div className="max-w-7xl mx-auto flex flex-col space-y-16">
         
         {/* TOP: Embedded Interactive Google Map for Thakur College of Engineering and Technology */}
@@ -53,7 +52,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onNavClick }) => {
               <ul className="flex flex-col space-y-2 text-xs sm:text-sm text-white/85 font-sans">
                 <li>
                   <button
-                    onClick={() => onNavClick('Home')}
+                    onClick={() => navigate('/')}
                     className="hover:text-orange-400 transition-colors cursor-pointer text-left font-medium"
                   >
                     Home
@@ -61,7 +60,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onNavClick }) => {
                 </li>
                 <li>
                   <button
-                    onClick={() => onNavClick('About Us')}
+                    onClick={() => navigate('/about')}
                     className="hover:text-orange-400 transition-colors cursor-pointer text-left"
                   >
                     About Us
@@ -69,7 +68,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onNavClick }) => {
                 </li>
                 <li>
                   <button
-                    onClick={() => onNavClick('Events')}
+                    onClick={() => navigate('/events')}
                     className="hover:text-orange-400 transition-colors cursor-pointer text-left"
                   >
                     Events
@@ -77,7 +76,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onNavClick }) => {
                 </li>
                 <li>
                   <button
-                    onClick={() => onNavClick('Projects')}
+                    onClick={() => navigate('/projects')}
                     className="hover:text-orange-400 transition-colors cursor-pointer text-left"
                   >
                     Projects
@@ -85,7 +84,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onNavClick }) => {
                 </li>
                 <li>
                   <button
-                    onClick={() => onNavClick('Team')}
+                    onClick={() => navigate('/team')}
                     className="hover:text-orange-400 transition-colors cursor-pointer text-left"
                   >
                     Team

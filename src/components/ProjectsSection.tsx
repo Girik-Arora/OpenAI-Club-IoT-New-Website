@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { projectsData } from '../data/projects';
-import { ArrowRight, ExternalLink } from 'lucide-react';
-import { motion } from 'motion/react';
+import { projectsData, ProjectItem } from '../data/projects';
+import { ArrowRight, ExternalLink, X, Cpu, CheckCircle2, Layers } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export const ProjectsSection: React.FC<{ onContactClick?: () => void }> = ({ onContactClick }) => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   // Quadruple the project items to create a seamless infinite news broadcast loop
   const duplicatedProjects = [...projectsData, ...projectsData, ...projectsData, ...projectsData];
@@ -79,6 +80,7 @@ export const ProjectsSection: React.FC<{ onContactClick?: () => void }> = ({ onC
               return (
                 <div
                   key={`${project.id}-${idx}`}
+                  onClick={() => setSelectedProject(project)}
                   onMouseEnter={() => setHoveredId(`${project.id}-${idx}`)}
                   onMouseLeave={() => setHoveredId(null)}
                   className="flex-none w-[240px] sm:w-[280px] md:w-[310px] flex flex-col items-center group cursor-pointer transition-all duration-300"
@@ -146,8 +148,129 @@ export const ProjectsSection: React.FC<{ onContactClick?: () => void }> = ({ onC
             })}
           </motion.div>
         </div>
-
       </div>
+
+      {/* PROJECT POP-UP MODAL WITH FULL IMAGE & DETAILED BREAKDOWN */}
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-y-auto">
+            {/* Backdrop Dimmer */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="fixed inset-0 bg-black/85 backdrop-blur-md cursor-pointer"
+            />
+
+            {/* Modal Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+              className="relative w-full max-w-4xl bg-black/90 border border-white/20 rounded-3xl overflow-hidden shadow-2xl z-10 flex flex-col max-h-[90vh] my-auto"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/70 border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:bg-black transition-all cursor-pointer shadow-lg"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Scrollable Modal Content */}
+              <div className="overflow-y-auto p-6 sm:p-8 lg:p-10 space-y-8 text-left">
+                {/* Full-width High Resolution Image Preview */}
+                <div className="w-full h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden border border-white/15 relative bg-neutral-900 shadow-2xl">
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  
+                  {/* Category Pill Overlay */}
+                  <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center space-x-3">
+                    <span className="text-xs font-mono uppercase tracking-widest bg-orange-500/20 border border-orange-500/40 text-orange-300 px-3.5 py-1.5 rounded-full font-bold backdrop-blur-md">
+                      {selectedProject.category}
+                    </span>
+                    <span className="text-xs font-mono text-white/80 bg-black/60 border border-white/20 px-3 py-1 rounded-full">
+                      Project {selectedProject.number}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Project Header */}
+                <div>
+                  <h3 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3 font-sans">
+                    {selectedProject.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-white/80 leading-relaxed font-sans">
+                    {selectedProject.longDescription || selectedProject.description}
+                  </p>
+                </div>
+
+                {/* Tech Tags */}
+                <div className="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+                  {selectedProject.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-mono bg-white/10 text-white/90 border border-white/20 px-3 py-1 rounded-lg"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Technical Architecture & Key Features */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
+                  {/* System Architecture */}
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-5 shadow-lg">
+                    <div className="flex items-center space-x-2 text-orange-400 font-bold text-sm mb-3">
+                      <Cpu className="w-4 h-4" />
+                      <span>System Architecture & Hardware</span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-white/80 font-mono leading-relaxed">
+                      {selectedProject.architecture}
+                    </p>
+                  </div>
+
+                  {/* Key Capabilities */}
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-5 shadow-lg">
+                    <div className="flex items-center space-x-2 text-orange-400 font-bold text-sm mb-3">
+                      <Layers className="w-4 h-4" />
+                      <span>Key Features & Innovations</span>
+                    </div>
+                    <ul className="space-y-2 text-xs sm:text-sm text-white/80 font-sans">
+                      {selectedProject.features.map((feat, fIdx) => (
+                        <li key={fIdx} className="flex items-start space-x-2">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-none mt-0.5" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Modal Footer CTA */}
+                <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-xs font-mono text-white/60">OpenAI Club IoT Engineering Initiative</span>
+                  <button
+                    onClick={() => {
+                      setSelectedProject(null);
+                      if (onContactClick) onContactClick();
+                    }}
+                    className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-full transition-all shadow-lg hover:shadow-orange-500/30 cursor-pointer"
+                  >
+                    Collaborate on this Project
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

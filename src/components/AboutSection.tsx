@@ -40,45 +40,54 @@ export const AboutSection: React.FC = () => {
     <section id="about-us" className="w-full bg-transparent text-white pt-20 pb-32 px-4 sm:px-6 lg:px-8 relative z-20 border-t border-white/10">
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
         
-        {/* Top Eyebrow: main/About Us */}
+        {/* Main Banner Card */}
         <div className="w-full max-w-4xl bg-black/75 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 sm:p-12 shadow-2xl mb-12 flex flex-col items-center">
-          <div className="text-xs sm:text-sm font-semibold text-white/80 mb-6 tracking-wider bg-white/10 px-3 py-1 rounded-full border border-white/15">
-            main/<span className="italic text-white">About Us</span>
-          </div>
-
-          {/* Gigantic "About Us" Title with Overlapping Photo Cards */}
-          <div className="relative w-full max-w-3xl my-4 flex justify-center items-center">
-            {/* Top-left small photo */}
-            <div className="absolute -top-12 left-2 sm:left-12 w-16 sm:w-20 h-20 sm:h-24 rounded-lg overflow-hidden border border-white/30 shadow-2xl z-10 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+          
+          {/* Logo Emblem & Clean Title */}
+          <div className="flex flex-col items-center mb-8">
+            <div className="p-3.5 bg-white/5 border border-white/15 rounded-full backdrop-blur-md shadow-xl mb-4 hover:scale-105 transition-transform duration-300">
               <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80"
-                alt="IoT Chipset"
-                className="w-full h-full object-cover grayscale contrast-125"
+                src="/openai_logo_vibrant.png"
+                alt="OpenAI Club IoT Logo"
+                className="h-16 sm:h-20 w-auto object-contain filter drop-shadow-[0_8px_20px_rgba(255,140,0,0.5)]"
               />
             </div>
-
-            {/* Center tall photo */}
-            <div className="absolute -top-16 sm:-top-20 w-24 sm:w-32 h-32 sm:h-40 rounded-xl overflow-hidden border border-white/30 shadow-2xl z-20 hover:scale-105 transition-transform duration-300">
-              <img
-                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=400&q=80"
-                alt="AI Hardware Innovation"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Top-right small photo */}
-            <div className="absolute -top-8 right-2 sm:right-12 w-16 sm:w-20 h-20 sm:h-24 rounded-lg overflow-hidden border border-white/30 shadow-2xl z-10 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-              <img
-                src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=300&q=80"
-                alt="Circuit Laboratory"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Main Huge Typography */}
-            <h2 className="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tighter text-white pt-10 sm:pt-14 pb-2 drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]">
+            <h2 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
               About Us
             </h2>
+          </div>
+
+          {/* Clean 2-Card Photo Showcase */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl mb-8">
+            {/* Card 1 */}
+            <div className="group relative h-48 sm:h-56 rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-neutral-900 cursor-pointer">
+              <img
+                src="https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/agentspace_by3bak"
+                alt="Agent Space Keynote"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-left">
+                <span className="text-[10px] font-mono text-orange-400 uppercase tracking-widest bg-black/60 px-2 py-0.5 rounded border border-orange-500/30">
+                  Keynote Sessions
+                </span>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative h-48 sm:h-56 rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-neutral-900 cursor-pointer">
+              <img
+                src="https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/aiot_yklxrg"
+                alt="AIoT Workshops"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-left">
+                <span className="text-[10px] font-mono text-orange-400 uppercase tracking-widest bg-black/60 px-2 py-0.5 rounded border border-orange-500/30">
+                  IoT Labs & Workshops
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Plus Box & Department Badge */}

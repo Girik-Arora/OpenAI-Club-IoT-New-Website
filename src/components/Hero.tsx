@@ -8,8 +8,12 @@ export const Hero: React.FC = () => {
       <div className="w-full flex flex-col items-center bg-black/60 backdrop-blur-md border border-white/15 rounded-3xl p-8 sm:p-12 shadow-2xl shadow-black/80">
         {/* Top Badge Pill: IEI TCET ASSOCIATED CLUB */}
         <div className="inline-flex items-center space-x-3 bg-white/15 hover:bg-white/20 border border-white/30 backdrop-blur-lg px-4 sm:px-5 py-2 rounded-full transition-all duration-300 cursor-default mb-6 sm:mb-8 shadow-lg shadow-black/90">
-          <div className="flex items-center bg-white text-black px-2.5 py-1 rounded-md shadow-sm">
-            <IeiTcetLogo className="h-5 sm:h-6 w-auto text-black" />
+          <div className="flex items-center bg-white text-black px-2 py-1 rounded-md shadow-sm">
+            <img
+              src="https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/iei-logo_2_wcjjok"
+              alt="IEI TCET Logo"
+              className="h-6 sm:h-7 w-auto object-contain"
+            />
           </div>
           <span className="text-xs sm:text-sm font-bold text-white tracking-wider uppercase drop-shadow-sm">
             IEI TCET ASSOCIATED CLUB
