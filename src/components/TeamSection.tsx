@@ -43,8 +43,8 @@ const studentTeam2026: StudentMember[] = [
     number: '#01',
     badge: 'Executive Leader',
     bio: 'Leading strategic vision, IoT hardware initiatives, and AI community outreach for OpenAI Club IoT.',
-    linkedin: 'https://linkedin.com/in/girik-arora',
-    github: 'https://github.com/girikarora',
+    linkedin: 'https://www.linkedin.com/in/girik-arora-a2112b306/',
+    github: 'https://github.com/Girik-Arora',
     avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/download_fwqfh2',
     skills: ['IoT Architecture', 'AI Integration', 'Strategy'],
   },
@@ -54,8 +54,8 @@ const studentTeam2026: StudentMember[] = [
     number: '#02',
     badge: 'Core Operations',
     bio: 'Directing technical projects, event execution, and cross-departmental development workflows.',
-    linkedin: 'https://linkedin.com/in/aayush-randive',
-    github: 'https://github.com/aayushrandive',
+    linkedin: '',
+    github: '',
     avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/download_1_kqpqj5',
     skills: ['Embedded Systems', 'Project Lead', 'Hardware'],
   },
@@ -65,8 +65,8 @@ const studentTeam2026: StudentMember[] = [
     number: '#03',
     badge: 'Operations & Relations',
     bio: 'Managing club communications, technical documentation, member engagement, and institutional alignment.',
-    linkedin: 'https://linkedin.com/in/samannoy-bera',
-    github: 'https://github.com/samannoybera',
+    linkedin: 'https://www.linkedin.com/in/samannoy-bera-8a7684300/',
+    github: '',
     avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/f_auto,q_auto/download_2_jmjpcu',
     skills: ['Documentation', 'Communications', 'Full-Stack'],
   },
@@ -79,8 +79,8 @@ const studentTeam2025: StudentMember[] = [
     number: '#01',
     badge: 'Executive Leader',
     bio: 'Pioneered early IoT projects, foundational club architecture, and student research mentorship.',
-    linkedin: 'https://linkedin.com/in/girik-arora',
-    github: 'https://github.com/girikarora',
+    linkedin: 'https://www.linkedin.com/in/girik-arora-a2112b306/',
+    github: 'https://github.com/Girik-Arora',
     avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/v1784907116/download_fwqfh2.png',
     skills: ['IoT Architecture', 'AI Integration', 'Leadership'],
   },
@@ -90,8 +90,8 @@ const studentTeam2025: StudentMember[] = [
     number: '#02',
     badge: 'Core Operations',
     bio: 'Coordinated initial technical initiatives, hardware workshops, and operational workflows.',
-    linkedin: 'https://linkedin.com/in/parth-desai',
-    github: 'https://github.com/parthdesai',
+    linkedin: 'https://www.linkedin.com/in/parth-desai-736578378/',
+    github: 'https://github.com/1032240383-arch',
     avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/v1784907831/download_4_uekfaj.png',
     skills: ['Operations', 'Embedded Systems', 'Technical Execution'],
   },
@@ -101,8 +101,8 @@ const studentTeam2025: StudentMember[] = [
     number: '#03',
     badge: 'Operations & Relations',
     bio: 'Managed club administration, documentation, event relations, and community outreach.',
-    linkedin: 'https://linkedin.com/in/shreya-shrivastav',
-    github: 'https://github.com/shreyashrivastav',
+    linkedin: 'https://www.linkedin.com/in/shreya-shrivastav-07815b3a7/',
+    github: '',
     avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/v1784907832/download_5_nl9tyo.png',
     skills: ['Administration', 'Documentation', 'Public Relations'],
   },
@@ -112,8 +112,8 @@ const studentTeam2025: StudentMember[] = [
     number: '#04',
     badge: 'Advisory & Mentorship',
     bio: 'Providing strategic guidance, technical domain advisory, and student mentorship for foundational initiatives.',
-    linkedin: 'https://linkedin.com/in/krishna-bitthariya',
-    github: 'https://github.com/krishnabitthariya',
+    linkedin: 'https://www.linkedin.com/in/krishna-bitthariya-445952267/',
+    github: 'https://github.com/KrishnaBitthariyaCollege',
     avatar: 'https://res.cloudinary.com/ilmaxkyq/image/upload/v1784907832/download_3_dr80ev.png',
     skills: ['Strategic Advisory', 'Mentorship', 'IoT Systems'],
   },
@@ -316,26 +316,36 @@ export const TeamSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-start space-x-3">
-                    <a
-                      href={student.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#0A66C2] border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all duration-300 shadow-md group/icon"
-                      aria-label={`${student.name} LinkedIn`}
-                    >
-                      <Linkedin className="w-4 h-4 group-hover/icon:scale-110 transition-transform" />
-                    </a>
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-start space-x-3 min-h-[52px]">
+                    {student.linkedin && (
+                      <a
+                        href={student.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#0A66C2] border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all duration-300 shadow-md group/icon"
+                        aria-label={`${student.name} LinkedIn`}
+                      >
+                        <Linkedin className="w-4 h-4 group-hover/icon:scale-110 transition-transform" />
+                      </a>
+                    )}
 
-                    <a
-                      href={student.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-neutral-800 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all duration-300 shadow-md group/icon"
-                      aria-label={`${student.name} GitHub`}
-                    >
-                      <Github className="w-4 h-4 group-hover/icon:scale-110 transition-transform" />
-                    </a>
+                    {student.github && (
+                      <a
+                        href={student.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-full bg-white/10 hover:bg-neutral-800 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all duration-300 shadow-md group/icon"
+                        aria-label={`${student.name} GitHub`}
+                      >
+                        <Github className="w-4 h-4 group-hover/icon:scale-110 transition-transform" />
+                      </a>
+                    )}
+
+                    {!student.linkedin && !student.github && (
+                      <span className="text-[11px] font-mono text-white/50 italic">
+                        Executive Member
+                      </span>
+                    )}
                   </div>
                 </div>
               </motion.div>
